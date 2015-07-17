@@ -218,6 +218,12 @@
     <Content Include="Images\commercianti.jpg" />
     <Content Include="Images\Comuni.png" />
     <Content Include="Images\contatti.png" />
+    <Content Include="Images\demo.jpg" />
+    <Content Include="Images\demo1.jpg" />
+    <Content Include="Images\demo2.jpg" />
+    <Content Include="Images\demo3.jpg" />
+    <Content Include="Images\demo4.jpg" />
+    <Content Include="Images\demo5.png" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\Lontano.jpg" />
     <Content Include="Images\Ruoli.jpg" />

@@ -22,9 +22,9 @@
                         <div class="col-lg-6">
                             <div class="input-group">
                                 <span class="input-group-btn">
-                                    <asp:LinkButton ID="linkbuttonCerca" OnClick="linkbuttonCerca_Click" runat="server"><span class="glyphicon glyphicon-search"></span></asp:LinkButton>
+                                    <asp:LinkButton ID="linkbuttonCerca" OnClick="linkbuttonCerca_Click" runat="server"><span class="glyphicon glyphicon-search"></span>  </asp:LinkButton>
+                                <asp:TextBox ID="textCerca" CssClass="form-control" runat="server" placeholder="Cosa cerchi..." ></asp:TextBox>
                                 </span>
-                                <asp:TextBox ID="textCerca" CssClass="form-control" runat="server" placeholder="Cosa cerchi..."></asp:TextBox>
                             </div>
                             <!-- /input-group -->
                         </div>
@@ -65,31 +65,16 @@
                 There are no entries found for Prodottis
             </EmptyDataTemplate>
             <LayoutTemplate>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
+                <div class="row">
+                    <div runat="server" id="itemPlaceholder">
+                    </div>
+                    <div class="row">
+                    </div>
+                </div>
+                <div>
 
-                            </th>
-                            <th>
-								<asp:LinkButton Text="UserId" CommandName="Sort" CommandArgument="UserId" runat="Server" />
-							</th>
-                            <th>
-								<asp:LinkButton Text="Prodotto" CommandName="Sort" CommandArgument="nome_prodotto" runat="Server" />
-							</th>
-                            <th>
-								<asp:LinkButton Text="Prezzo" CommandName="Sort" CommandArgument="prezzo_prodotto" runat="Server" />
-							</th>
-                            <th>
-								<asp:LinkButton Text="Categoria" CommandName="Sort" CommandArgument="categoria_Id" runat="Server" />
-							</th>
-                            <th>&nbsp;</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr runat="server" id="itemPlaceholder" />
-                    </tbody>
-                </table>
+                </div>
+                <div class="row">
 				<asp:DataPager PageSize="5"  runat="server">
 					<Fields>
                         <asp:NextPreviousPagerField ShowLastPageButton="False" ShowNextPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
@@ -97,31 +82,36 @@
                         <asp:NextPreviousPagerField ShowFirstPageButton="False" ShowPreviousPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
                     </Fields>
 				</asp:DataPager>
+                </div>
             </LayoutTemplate>
             <ItemTemplate>
-                <tr>
-                    <td>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/KZero/Prodottis/Details", Item.prodottoId) %>' >
+                        <img src="../Images/demo.jpg" alt="...">
+                            </asp:HyperLink>                      
+                      <div class="caption">
+                        <h3><asp:DynamicControl runat="server" DataField="nome_prodotto" ID="nome_prodotto" Mode="ReadOnly" /></h3>
+                        <p><asp:DynamicControl runat="server" DataField="descrizione_prodotto" ID="descrizione_prodotto" Mode="ReadOnly" /></p>
+                          <p>
+                               Categoria: <%#: Item.nome_categoria != null ? Item.nome_categoria.nome_categoria : "" %>
+                          </p>
+                          <p>
+                            Prezzo: <asp:DynamicControl runat="server" DataField="prezzo_prodotto" ID="prezzo_prodotto" Mode="ReadOnly" />
+                          </p>
+                        <p>
+								Venditore: <asp:DynamicControl runat="server" DataField="UserId" ID="UserId" Mode="ReadOnly" />
 
-                    </td>
-							<td>
-								<asp:DynamicControl runat="server" DataField="UserId" ID="UserId" Mode="ReadOnly" />
-							</td>
-							<td>
-								<asp:DynamicControl runat="server" DataField="nome_prodotto" ID="nome_prodotto" Mode="ReadOnly" />
-							</td>
-							<td>
-								<asp:DynamicControl runat="server" DataField="descrizione_prodotto" ID="descrizione_prodotto" Mode="ReadOnly" />
-							</td>
-							<td>
-								<asp:DynamicControl runat="server" DataField="prezzo_prodotto" ID="prezzo_prodotto" Mode="ReadOnly" />
-							</td>
-							<td>
-								<%#: Item.nome_categoria != null ? Item.nome_categoria.nome_categoria : "" %>
-							</td>
-                    <td>
-					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/KZero/Prodottis/Details", Item.prodottoId) %>' Text="Details" />
-                    </td>
-                </tr>
+                        </p>
+                          <p>
+                            <asp:HyperLink CssClass="btn btn-primary" runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/KZero/Prodottis/Details", Item.prodottoId) %>' Text="Details" />
+
+                          </p>
+                      </div>
+                    </div>
+                      <p></p>
+                  </div>
+                
             </ItemTemplate>
         </asp:ListView>
     </div>

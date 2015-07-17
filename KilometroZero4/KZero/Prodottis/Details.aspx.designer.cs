@@ -11,5 +11,23 @@ namespace KilometroZero4.KZero.Prodottis {
     
     
     public partial class Details {
+        
+        /// <summary>
+        /// pnlUtente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlUtente;
+        
+        /// <summary>
+        /// linkbuttonTorna control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton linkbuttonTorna;
     }
 }

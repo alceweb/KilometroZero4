@@ -38,7 +38,7 @@ namespace KilometroZero4.KZero.Prodottis
         {
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
-                Response.Redirect("../Default");
+                Response.Redirect("../../Main");
             }
         }
     }
