@@ -22,13 +22,31 @@ namespace KilometroZero4.KZero {
         protected global::System.Web.UI.WebControls.Panel pnlUtente;
         
         /// <summary>
-        /// A1 control.
+        /// linkbuttonCerca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.WebControls.LinkButton linkbuttonCerca;
+        
+        /// <summary>
+        /// textCerca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textCerca;
+        
+        /// <summary>
+        /// linkbuttonReset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton linkbuttonReset;
         
         /// <summary>
         /// pnlCommerciante control.
@@ -74,5 +92,14 @@ namespace KilometroZero4.KZero {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListView1;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }

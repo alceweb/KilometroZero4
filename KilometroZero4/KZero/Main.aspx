@@ -9,38 +9,49 @@
                 <img alt="" class="img-responsive img-circle" src="../Images/Ruoli.jpg" />
 
         </div>
-        <div class="col-md-6">
-            <p>Benvenuto <span class="red1"><%: HttpContext.Current.User.Identity.GetUserName() %></span><br /></p>
+            <div class="col-md-6">
+                <p>Benvenuto <span class="red1"><%: HttpContext.Current.User.Identity.GetUserName() %></span></p>
 
-<%-- Pannello utente --%>
-            <asp:Panel ID="pnlUtente" Visible="false" runat="server">
-            Sei registrato come <span class=red1>Utente</span><br />
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="input-group">
+                <%-- Pannello utente --%>
+                <asp:Panel ID="pnlUtente" Visible="false" runat="server">
+                    Sei registrato come <span class="red1">Utente</span>
+                    <div class="panel panel-primary">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <asp:LinkButton ID="linkbuttonCerca" OnClick="linkbuttonCerca_Click" runat="server"><span class="glyphicon glyphicon-search"></span></asp:LinkButton>
+                                </span>
+                                <asp:TextBox ID="textCerca" CssClass="form-control" runat="server" placeholder="Cosa cerchi..."></asp:TextBox>
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                <asp:LinkButton ID="linkbuttonReset" OnClick="linkbuttonReset_Click" runat="server"><span class="glyphicon glyphicon-remove"></span></asp:LinkButton>
                             </span>
-                            <input type="text" class="form-control" placeholder="Cosa cerchi...">
-                        </div><!-- /input-group -->
-                    </div><!-- /.col-lg-6 -->
-                </div><!-- /.row -->
-                        <a runat="server" href="~/KZero/Prodottis/Default" class="label label-danger" id="A1">Tutti i prodotti</a>
-            </asp:Panel>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </asp:Panel>
 
-<%-- Pannello commerciante --%>
-            <asp:Panel ID="pnlCommerciante" Visible="false" runat="server">
-            Sei registrato come <span class=red1>Commerciante</span><br />
-                        <a runat="server" href="~/KZeroCommercianti/Prodottis/Default" class="label label-danger" id="productLink">Gestisci i tuoi prodotti</a>
-            </asp:Panel>
+                <%-- Pannello commerciante --%>
+                <asp:Panel ID="pnlCommerciante" Visible="false" runat="server">
+                    Sei registrato come <span class="red1">Commerciante</span><br />
+                    <a runat="server" href="~/KZeroCommercianti/Prodottis/Default" class="label label-danger" id="productLink">Gestisci i tuoi prodotti</a>
+                </asp:Panel>
 
-<%-- Pannello comune --%>
-            <asp:Panel ID="pnlComune" Visible="false" runat="server">
-            Sei registrato come <span class=red1>Comune</span><br />
-                        <a runat="server" href="~/KZeroComuni/Main" class="label label-danger" id="comuneLink">Gestione Comune</a>
-            </asp:Panel>
+                <%-- Pannello comune --%>
+                <asp:Panel ID="pnlComune" Visible="false" runat="server">
+                    Sei registrato come <span class="red1">Comune</span><br />
+                    <a runat="server" href="~/KZeroComuni/Main" class="label label-danger" id="comuneLink">Gestione Comune</a>
+                </asp:Panel>
 
-        </div>
+            </div>
 
         </div>
     </div>
@@ -58,31 +69,19 @@
                     <thead>
                         <tr>
                             <th>
-								<asp:LinkButton Text="prodottoId" CommandName="Sort" CommandArgument="prodottoId" runat="Server" />
-							</th>
+
+                            </th>
                             <th>
 								<asp:LinkButton Text="UserId" CommandName="Sort" CommandArgument="UserId" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="attivo" CommandName="Sort" CommandArgument="attivo" runat="Server" />
+								<asp:LinkButton Text="Prodotto" CommandName="Sort" CommandArgument="nome_prodotto" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="nome_prodotto" CommandName="Sort" CommandArgument="nome_prodotto" runat="Server" />
+								<asp:LinkButton Text="Prezzo" CommandName="Sort" CommandArgument="prezzo_prodotto" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="descrizione_prodotto" CommandName="Sort" CommandArgument="descrizione_prodotto" runat="Server" />
-							</th>
-                            <th>
-								<asp:LinkButton Text="prezzo_prodotto" CommandName="Sort" CommandArgument="prezzo_prodotto" runat="Server" />
-							</th>
-                            <th>
-								<asp:LinkButton Text="categoria_Id" CommandName="Sort" CommandArgument="categoria_Id" runat="Server" />
-							</th>
-                            <th>
-								<asp:LinkButton Text="dataInizio" CommandName="Sort" CommandArgument="dataInizio" runat="Server" />
-							</th>
-                            <th>
-								<asp:LinkButton Text="dataFine" CommandName="Sort" CommandArgument="dataFine" runat="Server" />
+								<asp:LinkButton Text="Categoria" CommandName="Sort" CommandArgument="categoria_Id" runat="Server" />
 							</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -101,14 +100,11 @@
             </LayoutTemplate>
             <ItemTemplate>
                 <tr>
-							<td>
-								<asp:DynamicControl runat="server" DataField="prodottoId" ID="prodottoId" Mode="ReadOnly" />
-							</td>
+                    <td>
+
+                    </td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="UserId" ID="UserId" Mode="ReadOnly" />
-							</td>
-							<td>
-								<asp:DynamicControl runat="server" DataField="attivo" ID="attivo" Mode="ReadOnly" />
 							</td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="nome_prodotto" ID="nome_prodotto" Mode="ReadOnly" />
@@ -121,12 +117,6 @@
 							</td>
 							<td>
 								<%#: Item.nome_categoria != null ? Item.nome_categoria.nome_categoria : "" %>
-							</td>
-							<td>
-								<asp:DynamicControl runat="server" DataField="dataInizio" ID="dataInizio" Mode="ReadOnly" />
-							</td>
-							<td>
-								<asp:DynamicControl runat="server" DataField="dataFine" ID="dataFine" Mode="ReadOnly" />
 							</td>
                     <td>
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/KZero/Prodottis/Details", Item.prodottoId) %>' Text="Details" />
@@ -166,5 +156,5 @@
 
 
     </div>
-
+    <asp:Label ID="Label1" runat="server"></asp:Label>
 </asp:Content>
