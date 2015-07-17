@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cittadini.aspx.cs" Inherits="KilometroZero4.Cittadini" %>
+﻿<%@ Page Title="Cittadini" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cittadini.aspx.cs" Inherits="KilometroZero4.Cittadini" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
-        <h2>Cittadini</h2>
+        <h2><%: Title %></h2>
         <div class="row">
             <div class="col-md-6">
                 <img alt="" class="img-responsive img-circle" src="Images/cittadini.jpg" />

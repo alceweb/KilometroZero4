@@ -213,9 +213,11 @@
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\CaravaggioLente.jpg" />
     <Content Include="Images\cittadini.jpg" />
     <Content Include="Images\commercianti.jpg" />
     <Content Include="Images\Comuni.png" />
+    <Content Include="Images\contatti.png" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\Lontano.jpg" />
     <Content Include="Images\Ruoli.jpg" />

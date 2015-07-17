@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using KilometroZero4.Models;
+using System.Linq.Expressions;
 
 namespace KilometroZero4.KZero.Prodottis
 {
@@ -21,7 +22,7 @@ namespace KilometroZero4.KZero.Prodottis
         // USAGE: <asp:ListView SelectMethod="GetData">
         public IQueryable<KilometroZero4.Models.Prodotti> GetData()
         {
-            return _db.Prodottis.Where(a => a.attivo == true).Include(m => m.nome_categoria);
+            return _db.Prodottis.Where(p => p.nome_prodotto.Contains("") && p.attivo == true).Include(m => m.nome_categoria);
         }
     }
 }

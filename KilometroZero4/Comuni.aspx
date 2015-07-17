@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comuni.aspx.cs" Inherits="KilometroZero4.Comuni" %>
+﻿<%@ Page Title="Comuni" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comuni.aspx.cs" Inherits="KilometroZero4.Comuni" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
     <h2><%: Title %></h2>

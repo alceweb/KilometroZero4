@@ -1,30 +1,41 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="KilometroZero4.Contact" %>
+﻿<%@ Page Title="Contatti" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="KilometroZero4.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <address>
-        Comune di Caravaggio<br />
-        Piazza Garibaldi 24043 Caravaggio BG<br />
-        <abbr title="Tel.">Tel.</abbr>
-        0363.55458
-    </address>
-    <address>
-        <ul>
-            <li>
-                <strong>Problematiche legate all'utilizzo del sito:</strong> <a href="mailto:webservice@cr-consult.it">webservice@cr-consult.it</a>
-            </li>
-            <li>
+    <div class="jumbotron">
+        <h2><%: Title %></h2>
+        <div class="row">
+            <div class="col-md-5">
+                <img alt="" class="img-responsive" src="Images/contatti.png" />
 
-                <strong>Informazioni sulle direttive comunali:</strong> <a href="mailto:Marketing@example.com">marketing@comune.it</a>
-            </li>
-            <li>
-                <strong>Problemi di transizione commerciale</strong> <a href="mailto:almissh@gmail.com">almissh@gmail.com</a>
-            </li>
-            <li>
-                <strong>Per farci i complimenti</strong> <a href="mailto:cesare@cr-consult.eu">cesare@cr-consultt.eu</a><br />
-            </li>
-        </ul>
-        <hr />
-    </address>
+            </div>
+            <div class="col-md-6">
+                <address>
+                    Comune di Caravaggio<br />
+                    Piazza Garibaldi 24043 Caravaggio BG<br />
+                    <abbr title="Tel.">Tel.</abbr>
+                    0363.55458
+                </address>
+                <address>
+                    <ul>
+                        <li>
+                            <strong>Problematiche legate all'utilizzo del sito:</strong> <a href="mailto:webservice@cr-consult.it">webservice@cr-consult.it</a>
+                        </li>
+                        <li>
+
+                            <strong>Informazioni sulle direttive comunali:</strong> <a href="mailto:Marketing@example.com">marketing@comune.it</a>
+                        </li>
+                        <li>
+                            <strong>Problemi di transizione commerciale</strong> <a href="mailto:almissh@gmail.com">almissh@gmail.com</a>
+                        </li>
+                        <li>
+                            <strong>Per farci i complimenti</strong> <a href="mailto:cesare@cr-consult.eu">cesare@cr-consultt.eu</a><br />
+                        </li>
+                    </ul>
+                    <hr />
+                </address>
+            </div>
+        </div>
+    </div>
         <h2>Se preferisci inviaci direttamente il tuo messaggio tramite web</h2>
         <div class="form-horizontal">
           <div class="form-group">

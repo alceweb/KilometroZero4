@@ -3,9 +3,16 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1><span class="red">K</span>ilometro <span class="red">Z</span>ero</h1>
-        <p class="lead">Trova nel tuo comune quello che cerchi</p>
-        <p><a href="KZero/Main.aspx" class="btn btn-primary btn-lg">Accedi &raquo;</a></p>
+        <div class="row">
+            <div class="col-md-6">
+            <h1><span class="red">K</span>ilometro <span class="red">Z</span>ero</h1>
+            <p class="lead">Trova nel tuo comune quello che cerchi</p>
+            <p><a href="KZero/Main.aspx" class="btn btn-primary btn-lg">Accedi &raquo;</a></p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="Images/CaravaggioLente.jpg" />
+            </div>
+        </div>
     </div>
 
     <div class="row">
