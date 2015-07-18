@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using KilometroZero4.Models;
 
-namespace KilometroZero4.KZeroComuni.Categories
+namespace KilometroZero4.KZeroNav.Navs
 {
     public partial class Default : System.Web.UI.Page
     {
@@ -17,11 +17,11 @@ namespace KilometroZero4.KZeroComuni.Categories
         {
         }
 
-        // Model binding method to get List of Categorie entries
+        // Model binding method to get List of Nav entries
         // USAGE: <asp:ListView SelectMethod="GetData">
-        public IQueryable<KilometroZero4.Models.Categorie> GetData()
+        public IQueryable<KilometroZero4.Models.Nav> GetData()
         {
-            return _db.Categories;
+            return _db.Navs;
         }
     }
 }

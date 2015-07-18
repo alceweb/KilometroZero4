@@ -8,4 +8,5 @@
     <asp:Button ID="Button3" runat="server" Text="Scrivo Id utente" OnClick="Button3_Click" /><br />
     <asp:Button ID="Button4" runat="server" Text="Scrivo ruolo utente" OnClick="Button4_Click" /><br />
     <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+    <asp:Label CssClass="red" ID="Labelruolo" runat="server" ></asp:Label>
 </asp:Content>

@@ -47,7 +47,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+<%---nav pubblica ---%>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -66,6 +66,7 @@
                         <li><a runat="server" href="~/Cittadini">Cittadini</a></li>
                         <li><a runat="server" href="~/Contact">Contatti</a></li>
                     </ul>
+
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -84,7 +85,38 @@
                     </asp:LoginView>
                 </div>
             </div>
-        </div>
+         </div>
+<%---Fine nav pubblica ---%>
+<%---nav riservata ai ruoli ---%>
+<asp:Panel ID="pnlNav" runat="server">
+                <div class="navbar navbar-inverse ">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                    <a class="navbar-brand" runat="server" href="#">
+                        <asp:Label ID="Label1" CssClass="red1" runat="server" ></asp:Label>
+                    </a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul runat="server" class="nav navbar-nav">
+                                <asp:ListView ID="ListView1" runat="server"
+                                    DataKeyNames="navId"
+                                    ItemType="KilometroZero4.Models.Nav"
+                                    SelectMethod="GetData">
+                                    <ItemTemplate>
+                                        <li><a href='<%# Eval("pagine") %>'><%# Eval("testo") %></a></li>
+                                    </ItemTemplate>
+                                </asp:ListView>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+</asp:Panel>
+<%---Fine nav riservata ai ruoli  ---%>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
@@ -93,6 +125,8 @@
                 <p>&copy; <%: DateTime.Now.Year %> - <span class="almishCesare"><a href="http://www.cr-consult.eu/zona-web">Almish<b>&</b>Cesàre<b>W</b>eb</a></span></p>
             </footer>
         </div>
+
+
     </form>
 </body>
 </html>

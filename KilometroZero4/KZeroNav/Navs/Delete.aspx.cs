@@ -9,9 +9,9 @@ using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using KilometroZero4.Models;
 
-namespace KilometroZero4.KZeroComuni.Categories
+namespace KilometroZero4.KZeroNav.Navs
 {
-    public partial class Details : System.Web.UI.Page
+    public partial class Delete : System.Web.UI.Page
     {
 		protected KilometroZero4.Models.ApplicationDbContext _db = new KilometroZero4.Models.ApplicationDbContext();
 
@@ -19,18 +19,35 @@ namespace KilometroZero4.KZeroComuni.Categories
         {
         }
 
-        // This is the Select methd to selects a single Categorie item with the id
-        // USAGE: <asp:FormView SelectMethod="GetItem">
-        public KilometroZero4.Models.Categorie GetItem([FriendlyUrlSegmentsAttribute(0)]int? categoria_id)
+        // This is the Delete methd to delete the selected Nav item
+        // USAGE: <asp:FormView DeleteMethod="DeleteItem">
+        public void DeleteItem(int navId)
         {
-            if (categoria_id == null)
+            using (_db)
+            {
+                var item = _db.Navs.Find(navId);
+
+                if (item != null)
+                {
+                    _db.Navs.Remove(item);
+                    _db.SaveChanges();
+                }
+            }
+            Response.Redirect("../Default");
+        }
+
+        // This is the Select methd to selects a single Nav item with the id
+        // USAGE: <asp:FormView SelectMethod="GetItem">
+        public KilometroZero4.Models.Nav GetItem([FriendlyUrlSegmentsAttribute(0)]int? navId)
+        {
+            if (navId == null)
             {
                 return null;
             }
 
             using (_db)
             {
-	            return _db.Categories.Where(m => m.categoria_id == categoria_id).FirstOrDefault();
+	            return _db.Navs.Where(m => m.navId == navId).FirstOrDefault();
             }
         }
 

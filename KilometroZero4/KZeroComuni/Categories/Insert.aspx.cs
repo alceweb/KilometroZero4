@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using KilometroZero4.Models;
-using KilometroZero4.Models;
 
 namespace KilometroZero4.KZeroComuni.Categories
 {

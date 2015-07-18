@@ -2,35 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
-using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using KilometroZero4.Models;
 
-namespace KilometroZero4.KZeroComuni.Categories
+namespace KilometroZero4.KZeroNav.Navs
 {
-    public partial class Details : System.Web.UI.Page
+    public partial class Insert : System.Web.UI.Page
     {
 		protected KilometroZero4.Models.ApplicationDbContext _db = new KilometroZero4.Models.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
-        // This is the Select methd to selects a single Categorie item with the id
-        // USAGE: <asp:FormView SelectMethod="GetItem">
-        public KilometroZero4.Models.Categorie GetItem([FriendlyUrlSegmentsAttribute(0)]int? categoria_id)
+        // This is the Insert method to insert the entered Nav item
+        // USAGE: <asp:FormView InsertMethod="InsertItem">
+        public void InsertItem()
         {
-            if (categoria_id == null)
-            {
-                return null;
-            }
-
             using (_db)
             {
-	            return _db.Categories.Where(m => m.categoria_id == categoria_id).FirstOrDefault();
+                var item = new KilometroZero4.Models.Nav();
+
+                TryUpdateModel(item);
+
+                if (ModelState.IsValid)
+                {
+                    // Save changes
+                    _db.Navs.Add(item);
+                    _db.SaveChanges();
+
+                    Response.Redirect("Default");
+                }
             }
         }
 
@@ -38,9 +43,8 @@ namespace KilometroZero4.KZeroComuni.Categories
         {
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
-                Response.Redirect("../Default");
+                Response.Redirect("Default");
             }
         }
     }
 }
-

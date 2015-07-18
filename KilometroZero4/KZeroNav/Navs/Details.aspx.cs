@@ -9,7 +9,7 @@ using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using KilometroZero4.Models;
 
-namespace KilometroZero4.KZeroComuni.Categories
+namespace KilometroZero4.KZeroNav.Navs
 {
     public partial class Details : System.Web.UI.Page
     {
@@ -19,18 +19,18 @@ namespace KilometroZero4.KZeroComuni.Categories
         {
         }
 
-        // This is the Select methd to selects a single Categorie item with the id
+        // This is the Select methd to selects a single Nav item with the id
         // USAGE: <asp:FormView SelectMethod="GetItem">
-        public KilometroZero4.Models.Categorie GetItem([FriendlyUrlSegmentsAttribute(0)]int? categoria_id)
+        public KilometroZero4.Models.Nav GetItem([FriendlyUrlSegmentsAttribute(0)]int? navId)
         {
-            if (categoria_id == null)
+            if (navId == null)
             {
                 return null;
             }
 
             using (_db)
             {
-	            return _db.Categories.Where(m => m.categoria_id == categoria_id).FirstOrDefault();
+	            return _db.Navs.Where(m => m.navId == navId).FirstOrDefault();
             }
         }
 

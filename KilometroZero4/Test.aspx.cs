@@ -16,6 +16,7 @@ namespace KilometroZero4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Labelruolo.Text = HttpContext.Current.User.Identity.ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -53,9 +54,6 @@ namespace KilometroZero4
         {
             var ruolo = HttpContext.Current.User.IsInRole("commerciante").ToString();
             Label2.Text = "Ruolo utente = " + ruolo;
-            Models.ApplicationDbContext context = new ApplicationDbContext();
-            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            userMgr.AddToRole(ruolo, "comune");
         }
 
     }

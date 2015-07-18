@@ -8,10 +8,9 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using KilometroZero4.Models;
-
-namespace KilometroZero4.KZeroCommercianti.Prodottis
+namespace KilometroZero4.KZeroNav.Navs
 {
-    public partial class Delete : System.Web.UI.Page
+    public partial class Edit : System.Web.UI.Page
     {
 		protected KilometroZero4.Models.ApplicationDbContext _db = new KilometroZero4.Models.ApplicationDbContext();
 
@@ -19,35 +18,44 @@ namespace KilometroZero4.KZeroCommercianti.Prodottis
         {
         }
 
-        // This is the Delete methd to delete the selected Prodotti item
-        // USAGE: <asp:FormView DeleteMethod="DeleteItem">
-        public void DeleteItem(int prodottoId)
+        // This is the Update methd to update the selected Nav item
+        // USAGE: <asp:FormView UpdateMethod="UpdateItem">
+        public void UpdateItem(int  navId)
         {
             using (_db)
             {
-                var item = _db.Prodottis.Find(prodottoId);
+                var item = _db.Navs.Find(navId);
 
-                if (item != null)
+                if (item == null)
                 {
-                    _db.Prodottis.Remove(item);
+                    // The item wasn't found
+                    ModelState.AddModelError("", String.Format("Item with id {0} was not found", navId));
+                    return;
+                }
+
+                TryUpdateModel(item);
+
+                if (ModelState.IsValid)
+                {
+                    // Save changes here
                     _db.SaveChanges();
+                    Response.Redirect("../Default");
                 }
             }
-            Response.Redirect("../Default");
         }
 
-        // This is the Select methd to selects a single Prodotti item with the id
+        // This is the Select method to selects a single Nav item with the id
         // USAGE: <asp:FormView SelectMethod="GetItem">
-        public KilometroZero4.Models.Prodotti GetItem([FriendlyUrlSegmentsAttribute(0)]int? prodottoId)
+        public KilometroZero4.Models.Nav GetItem([FriendlyUrlSegmentsAttribute(0)]int? navId)
         {
-            if (prodottoId == null)
+            if (navId == null)
             {
                 return null;
             }
 
             using (_db)
             {
-	            return _db.Prodottis.Where(m => m.prodottoId == prodottoId).Include(m => m.nome_categoria).FirstOrDefault();
+                return _db.Navs.Find(navId);
             }
         }
 
@@ -60,4 +68,3 @@ namespace KilometroZero4.KZeroCommercianti.Prodottis
         }
     }
 }
-

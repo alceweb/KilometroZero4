@@ -8,7 +8,6 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using KilometroZero4.Models;
-using KilometroZero4.Models;
 namespace KilometroZero4.KZeroCommercianti.Prodottis
 {
     public partial class Edit : System.Web.UI.Page

@@ -42,6 +42,8 @@ namespace KilometroZero4.Models
         public System.Data.Entity.DbSet<KilometroZero4.Models.Prodotti> Prodottis { get; set; }
 
         public System.Data.Entity.DbSet<KilometroZero4.Models.Categorie> Categories { get; set; }
+
+        public System.Data.Entity.DbSet<KilometroZero4.Models.Nav> Navs { get; set; }
     }
 }
 
