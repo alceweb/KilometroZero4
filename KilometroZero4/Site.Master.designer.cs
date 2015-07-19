@@ -13,6 +13,15 @@ namespace KilometroZero4 {
     public partial class SiteMaster {
         
         /// <summary>
+        /// xdsNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource xdsNav;
+        
+        /// <summary>
         /// pnlNav control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace KilometroZero4 {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ListView1 control.
+        /// ListView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.ListView ListView2;
         
         /// <summary>
         /// MainContent control.

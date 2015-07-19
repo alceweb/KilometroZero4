@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nav>
+  <ruolo ruolo="commerciante">
+    <vocenav>
+      <voce testo="profilo attività" pagina="default.aspx"/>
+      <voce testo="i tuoi prodotti" pagina="default.aspx"/>
+    </vocenav>
+  </ruolo>
+  <ruolo ruolo="comune">
+    <vocenav>
+      <voce testo="profilo comune" pagina="default.aspx"/>
+      <voce testo="categorie" pagina="default.aspx"/>
+      <voce testo="commercianti" pagina="default.aspx"/>
+      <voce testo="utenti" pagina="default.aspx"/>
+    </vocenav>
+  </ruolo>
+  <ruolo ruolo="utente">
+    <vocenav>
+      <voce testo="profilo utente" pagina="default.aspx"/>
+      <voce testo="lista prodotti" pagina="default.aspx"/>
+    </vocenav>
+  </ruolo>
+</nav>

@@ -75,45 +75,36 @@ namespace KilometroZero4
                         = new System.Globalization.CultureInfo("it-IT");
             System.Threading.Thread.CurrentThread.CurrentUICulture
                  = new System.Globalization.CultureInfo("it-IT");
+            //preparo il datasource per nav secondario
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 pnlNav.Visible = true;
-            }
-            else
-            {
-                pnlNav.Visible=false;
-            }
-        }
-        // Model metodo di binding per generare la lista di Nav in base al ruolo
-        // SI USA: <asp:ListView SelectMethod="GetData">
-        public IQueryable<KilometroZero4.Models.Nav> GetData()
-        {
-            if (HttpContext.Current.User.IsInRole("commerciante"))
-            {
-                Label1.Text = "Commerciante";
-                return _db.Navs.Where(r => r.ruolo == "commerciante");
-            }
-            else
+                if (HttpContext.Current.User.IsInRole("commerciante"))
+                {
+                    Label1.Text = "Commerciante";
+                    xdsNav.XPath = "/nav/ruolo[@ruolo='commerciante']/vocenav/voce";
+                }
+                else 
                 {
                     if (HttpContext.Current.User.IsInRole("comune"))
                     {
-                        Label1.Text = "Comune";
-                        return _db.Navs.Where(r => r.ruolo == "comune");
+                        Label1.Text = "comune";
+                        xdsNav.XPath = "/nav/ruolo[@ruolo='comune']/vocenav/voce";
                     }
                     else 
                     {
-                        if (HttpContext.Current.User.IsInRole("administrator"))
-                        {
-                            Label1.Text = "Amministratore";
-                            return _db.Navs.Where(r => r.ruolo == "administrator");
-                        }
+                        Label1.Text = "Utente";
+                        xdsNav.XPath = "/nav/ruolo[@ruolo='utente']/vocenav/voce";
                     }
                 }
+            }
+            else
             {
-                return _db.Navs.Where(r => r.ruolo == "nessuno");
+                xdsNav.XPath = "/nav/ruolo[@ruolo='utente']/vocenav/voce";
+                pnlNav.Visible = false;
+                Label1.Text = "";
             }
         }
-
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut();

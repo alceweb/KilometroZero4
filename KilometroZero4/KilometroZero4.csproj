@@ -187,6 +187,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="App_Data\nav.xml" />
     <Content Include="Cittadini.aspx" />
     <Content Include="Commercianti.aspx" />
     <Content Include="Comuni.aspx" />
@@ -769,9 +770,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201507130637550_InitialCreate.resx">
       <DependentUpon>201507130637550_InitialCreate.cs</DependentUpon>

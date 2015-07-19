@@ -88,6 +88,7 @@
          </div>
 <%---Fine nav pubblica ---%>
 <%---nav riservata ai ruoli ---%>
+        <asp:XmlDataSource ID="xdsNav" runat="server" DataFile="~/App_Data/nav.xml"></asp:XmlDataSource>
 <asp:Panel ID="pnlNav" runat="server">
                 <div class="navbar navbar-inverse ">
                     <div class="container">
@@ -103,18 +104,16 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul runat="server" class="nav navbar-nav">
-                                <asp:ListView ID="ListView1" runat="server"
-                                    DataKeyNames="navId"
-                                    ItemType="KilometroZero4.Models.Nav"
-                                    SelectMethod="GetData">
+                                <asp:ListView ID="ListView2" runat="server" DataSourceID="xdsNav">
                                     <ItemTemplate>
-                                        <li><a href='<%# Eval("pagine") %>'><%# Eval("testo") %></a></li>
+                                        <li><a href='<%# Eval("pagina") %>'><%# Eval("testo") %></a></li>
                                     </ItemTemplate>
                                 </asp:ListView>
                             </ul>
                         </div>
                     </div>
                 </div>
+
 </asp:Panel>
 <%---Fine nav riservata ai ruoli  ---%>
         <div class="container body-content">
