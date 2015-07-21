@@ -43,17 +43,24 @@ namespace KilometroZero4.KZero
             }
         }
         
-        // Model binding method to get List of Prodotti entries visualizza tutti dove attivo è selezionato
-        // USAGE: <asp:ListView SelectMethod="GetData">
+// Model binding method to get List of Prodotti entries visualizza tutti dove attivo è selezionato
+// USAGE: <asp:ListView SelectMethod="GetData">
         public IQueryable<KilometroZero4.Models.Prodotti> GetData()
         {
                 return _db.Prodottis.Where(p => p.attivo == true).Include(m => m.nome_categoria);
         }
-        //Questo metodo visualizza tutti i rpodotti attivi con il nome_prodottofiltrato dalla casella di testo
+//Questo metodo visualizza tutti i prodotti attivi con il nome_prodottofiltrato dalla casella di testo
         public IQueryable<KilometroZero4.Models.Prodotti> GetData1()
         {
             var cerca = textCerca.Text.ToString();
             return _db.Prodottis.Where(p => p.nome_prodotto.Contains(cerca) && p.attivo == true).Include(m => m.nome_categoria);
+        }
+        //Questo metodo visualizza tutti i prodotti attivi con il nome_prodottofiltrato dalla casella di testo filttrati da ddbox categoria
+        public IQueryable<KilometroZero4.Models.Prodotti> GetData2()
+        {
+            var nome = textCerca.Text.ToString();
+            var cat = ddownCat.SelectedValue.ToString();
+            return _db.Prodottis.Where(p => p.nome_prodotto.Contains(nome) && p.attivo == true && p.nome_categoria.nome_categoria == cat).Include(m => m.nome_categoria);
         }
 
         protected void linkbuttonCerca_Click(object sender, EventArgs e)
@@ -70,6 +77,11 @@ namespace KilometroZero4.KZero
         {
             textCerca.Text = "";
             ListView1.SelectMethod = "GetData1";
+        }
+
+        protected void ddownCat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView1.SelectMethod = "GetData2";
         }
 
     }

@@ -26,8 +26,14 @@
             </a>
             </p>
             <div class="collapse" id="collapseExample1">
-                <div >
-                    Continua la descrizione approfondita di COME FUNZIONA ....
+                <div class="well">
+                    <p>Se hai un'attività commerciale puoi sfruttare questo portale e creare una tua vetrina.<br />
+                        Solo i commercianti regolari possono aprire una posizione su <span class="red">K</span>ilometro <span class="red">Z</span>ero.
+                    </p>
+                    <p>Invia la form di richiesta di adesione.<br />
+                        La richiesta verrà accettata dal tuo comune, verrà creato un utente personalizzato e ti verranno inviati username e password, con i quali accedendo all'area riservata ai commercianti, potrai iniziare a esporre i tuoi prodotti o i tuoi servizi.<br />
+
+                    </p>
              
                 </div>
             </div>
@@ -35,15 +41,16 @@
         <div class="col-md-4">
             <h2>Sei un cittadino?</h2>
             <p>
-                Se stai cercando qualcosa e non sai dove trovarlo cerca in Kilometro Zero.
+                Se stai cercando qualcosa e non sai dove trovarlo, oppure hai bisogno di un servizio, cerca in Kilometro Zero.
                 Hai la possibilità di ricercare in tutti i negozi del tuo comune.
             <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">... &raquo;
             </a>
             </p>
             <div class="collapse" id="collapseExample2">
                 <div class="well">
-                    ...
-             
+                     Per accedere ai servizi di <span class="red">K</span>ilometro <span class="red">Z</span>ero è necessario registrarsi.<br />
+                    La registrazione è molto semplice, basta inserire in questa <a href="Account/Register.aspx" runat="server">form</a> la propria mail e la password e sarai subuto operativo.<br />
+            
                 </div>
             </div>
 
@@ -57,7 +64,8 @@
             </p>
             <div class="collapse" id="collapseExample3">
                 <div class="well">
-                    ...
+                    Gli amministratori comunali possono richiedere l'adesione a <span class="red">K</span>ilometro <span class="red">Z</span>ero semplicemente compilando questa <a href="#"> form</a>.<br />
+                    Verrete contattati e un incaricato vi proporrà una demo personalizzata. 
              
                 </div>
             </div>

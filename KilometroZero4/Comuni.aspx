@@ -7,8 +7,8 @@
                 <img alt="" class="img-responsive" src="Images/comuni.png" />
 
             </div>
-            <div class="col-md-3">
-                Breve descrizione dei comuni
+            <div class="col-md-4">
+                Dare più valore e importanza alle risorse locali!
             </div>
         </div>
     </div>
@@ -18,11 +18,8 @@
                 Un servizio al cittadino
             </h2>
             <p>
-                                Un servizio erogato dal portale del comune, al pari di altri strumenti che già i cittadini utilizzano, semplice e potente allo stesso momento<br />
-                                Per poter raggiungere da casa le opportunità che la nostra città mette a disposizione        
-            </p>
-            <p>
-                <a class="btn btn-default" href="#nogo">Gestione comunale &raquo;</a>
+                                Un servizio erogato dal portale del comune, al pari di altri strumenti che già i commercianti utilizzano, semplice e potente allo stesso momento<br />
+                                Per poter raggiungere da casa le opportunità che la nostra città mette a disposizione.        
             </p>
         </div>
         <div class="col-md-4">
@@ -39,7 +36,8 @@
                 La semplicità
             </h2>
             <p>
-                La semplicità di uno strumento potente è il segreto dell'efficienza
+                La semplicità di uno strumento potente è il segreto dell'efficienza.<br />
+                Semplicemente offrire nuovi servizi al commercio a alla vita sociale
             </p>
         </div>
     </div>

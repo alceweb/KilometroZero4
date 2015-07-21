@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Web.Routing;
 using System.Web.ModelBinding;
+using System.Web.Security;
 
 namespace KilometroZero4
 {
@@ -16,7 +17,9 @@ namespace KilometroZero4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Labelruolo.Text = HttpContext.Current.User.Identity.ToString();
+            Labelruolo.Text =  HttpContext.Current.User.Identity.IsAuthenticated.ToString();
+            string[] ruoli = Roles.GetAllRoles();
+            Response.Write("ciao");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -54,6 +57,13 @@ namespace KilometroZero4
         {
             var ruolo = HttpContext.Current.User.IsInRole("commerciante").ToString();
             Label2.Text = "Ruolo utente = " + ruolo;
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            userMgr.AddToRole("e9f8777f-7017-426e-b1ac-1bec4636c62f", "comune");
         }
 
     }

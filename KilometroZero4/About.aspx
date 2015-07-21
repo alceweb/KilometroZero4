@@ -8,8 +8,9 @@
                 <img alt="" class="img-responsive img-circle" src="Images/lontano.jpg" />
 
             </div>
-            <div class="col-md-3">
-                qui breve descrizione veloce
+            <div class="col-md-4">
+                Perchè cercare lontano quello che hai a portata di mano?<br />
+
             </div>
         </div>
     </div>

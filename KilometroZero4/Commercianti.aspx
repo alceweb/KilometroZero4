@@ -8,8 +8,8 @@
                 <img alt="" class="img-responsive img-circle" src="Images/commercianti.jpg" />
 
             </div>
-            <div class="col-md-3">
-                qui breve descrizione veloce
+            <div class="col-md-4">
+                Un valore aggiunto alla proposta commerciale sul territorio!
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
             </h2>
             <p>
                                 Un servizio erogato dal portale del comune, al pari di altri strumenti che già i cittadini utilizzano, semplice e potente allo stesso momento<br />
-                                Per poter raggiungere da casa le opportunità che la nostra città mette a disposizione        
+                                Per proporre alla tua città i tuo prodotti e servizi, ecco il valore aggiunto alla tua attività.        
             </p>
             <p>
                 <a class="btn btn-default" href="#nogo">Aderisci &raquo;</a>
@@ -31,8 +31,9 @@
                 Opportunità
             </h2>
             <p>
-             L'attenzione allo sviluppo delle opportunità legate al territorio, alla vicinanza di ciò che ci serve e nello stesso tempo il contributo allo sviluppo di iniziative e attività 
-            che interagiscono con la vita del comune e dei cittadini stessi.
+                Offri i tuoi servizi.<br />
+                Metti in vetrina i tuoi prodotti.<br />
+             In una vetrina globale sulla città, un rapporto nuovo con nuovi clienti, un modo nuovo di fare commercio.
             </p>
         </div>
         <div class="col-md-4">
@@ -40,8 +41,14 @@
                 La semplicità
             </h2>
             <p>
-                La semplicità di uno strumento potente è il segreto dell'efficienza
+                Una piattaforma altamente tecnologica trasformata in semplice applicazione per le attività commerciali.<br />
             </p>
+                <ul>
+                    <li>mettere in vetrina i propri prodotti</li>
+                    <li>rendere visibili le offerte</li>
+                    <li>offrire i servizi</li>
+
+                </ul>
         </div>
     </div>
 

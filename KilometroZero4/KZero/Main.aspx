@@ -12,12 +12,13 @@
             <div class="col-md-6">
                 <p>Benvenuto <span class="red1"><%: HttpContext.Current.User.Identity.GetUserName() %></span></p>
 
-                <%-- Pannello utente --%>
+<%-- Pannello utente --%>
                 <asp:Panel ID="pnlUtente" Visible="false" runat="server">
                     Sei registrato come <span class="red1">Utente</span>
                     <div class="panel panel-primary">
 
                     </div>
+                <!--- ricerca generica nome_prodotto--->
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="input-group">
@@ -36,10 +37,20 @@
                         </div>
                         <!-- /.col-lg-6 -->
                     </div>
-                    <!-- /.row -->
+                <!--- fine ricerca generica nome_prodotto--->
+                <!--- filtra per categoria--->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <asp:DropDownList CssClass="dropdownCat" OnSelectedIndexChanged="ddownCat_SelectedIndexChanged" AutoPostBack="true" ID="ddownCat" runat="server">
+                                <asp:ListItem>Abbigliamento</asp:ListItem>
+                                <asp:ListItem>libreria</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                <!--- fine filtra per categoria--->
                 </asp:Panel>
 
-                <%-- Pannello commerciante --%>
+<%-- Pannello commerciante --%>
                 <asp:Panel ID="pnlCommerciante" Visible="false" runat="server">
                     Sei registrato come <span class="red1">Commerciante</span><br />
                     <a runat="server" href="~/KZeroCommercianti/Prodottis/Default" class="label label-danger" id="productLink">Gestisci i tuoi prodotti</a>
@@ -62,7 +73,8 @@
 			ItemType="KilometroZero4.Models.Prodotti"
             SelectMethod="GetData">
             <EmptyDataTemplate>
-                There are no entries found for Prodottis
+                <label class="red">Non ho trovato quello che stai cercando</label><br />
+                <label class="red1">Prova a inserire una definizione diversa</label>
             </EmptyDataTemplate>
             <LayoutTemplate>
                 <div class="row">
@@ -115,7 +127,7 @@
             </ItemTemplate>
         </asp:ListView>
     </div>
-    <hr /><div class="row">
+<%--- fine lista riservata ai soli utenti semplici  ---%>    <hr /><div class="row">
         <div class="col-md-4">
                 <p><strong>Commerciante</strong></p>
                 <ul>
@@ -133,7 +145,6 @@
                     <li>Comunica al comune eventuali abusi o irregolarità</li>
                 </ul>
             </div>
-
             <div class="col-md-4">
                 <p><strong>Comune</strong></p>
                 <ul>
@@ -143,8 +154,6 @@
                 </ul>
 
             </div>
-
-
     </div>
     <asp:Label ID="Label1" runat="server"></asp:Label>
 </asp:Content>

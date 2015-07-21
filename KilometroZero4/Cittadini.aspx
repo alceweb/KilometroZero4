@@ -7,8 +7,8 @@
                 <img alt="" class="img-responsive img-circle" src="Images/cittadini.jpg" />
 
             </div>
-            <div class="col-md-3">
-                qui descrizione veloce
+            <div class="col-md-4">
+                Utilizzare pienamente le risorse della tua città!
             </div>
         </div>
     </div>
@@ -21,17 +21,15 @@
                                 Un servizio erogato dal portale del comune, al pari di altri strumenti che già i cittadini utilizzano, semplice e potente allo stesso momento<br />
                                 Per poter raggiungere da casa le opportunità che la nostra città mette a disposizione        
             </p>
-            <p>
-                <a class="btn btn-default" href="#nogo">Gestione comunale &raquo;</a>
-            </p>
         </div>
         <div class="col-md-4">
             <h2>
                 Opportunità
             </h2>
             <p>
-             L'attenzione allo sviluppo delle opportunità legate al territorio, alla vicinanza di ciò che ci serve e nello stesso tempo il contributo allo sviluppo di iniziative e attività 
-            che interagiscono con la vita del comune e dei cittadini stessi.
+             Quante volte è capitato di cercare qualcosa e non sapere di averlo in casa?<br />
+                Cercare un prodotto particolare, un servizio specifico e non sapere di averlo a portata di mano.<br />
+                Il tuo comune con <span class="red">K</span>ilometro <span class="red">Z</span>ero ti dà l'opportunità di verificare se nella tua città lo puoi trovare.
             </p>
         </div>
         <div class="col-md-4">
@@ -39,7 +37,8 @@
                 La semplicità
             </h2>
             <p>
-                La semplicità di uno strumento potente è il segreto dell'efficienza
+                Una piattaforma altamente tecnologica trasformata in semplice applicazione per trovare quello che cerchi.<br />
+                Ti permette di sapere se quello che cerchi c'è a Kilometro Zero.
             </p>
         </div>
     </div>
