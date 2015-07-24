@@ -7,6 +7,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using KilometroZero4.Logic;
+using System.Data.Entity;
+using KilometroZero4.Models;
 
 namespace KilometroZero4
 {
@@ -17,9 +19,12 @@ namespace KilometroZero4
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
+
             // Create the custom role and user.
             //RoleActions roleActions = new RoleActions();
             //roleActions.AddUserAndRole();
+
         }
     }
 }

@@ -41,7 +41,7 @@
                 <!--- filtra per categoria--->
                     <div class="row">
                         <div class="col-lg-6">
-                            <asp:DropDownList CssClass="dropdownCat" OnSelectedIndexChanged="ddownCat_SelectedIndexChanged" AutoPostBack="true" ID="ddownCat" runat="server">
+                            <asp:DropDownList CssClass="dropdownCat" Visible="false" OnSelectedIndexChanged="ddownCat_SelectedIndexChanged" AutoPostBack="true" ID="ddownCat" runat="server">
                                 <asp:ListItem>Abbigliamento</asp:ListItem>
                                 <asp:ListItem>libreria</asp:ListItem>
                             </asp:DropDownList>
@@ -66,7 +66,7 @@
 
         </div>
     </div>
-<%--- lista riservata ai soli utenti semplici  ---%>
+<%--- lista prodotti solo per utenti semplici  ---%>
     <div>
         <asp:ListView id="ListView1" runat="server"
             DataKeyNames="prodottoId" 
@@ -105,8 +105,8 @@
                       <div class="caption">
                         <h3><asp:DynamicControl runat="server" DataField="nome_prodotto" ID="nome_prodotto" Mode="ReadOnly" /></h3>
                         <p><asp:DynamicControl runat="server" DataField="descrizione_prodotto" ID="descrizione_prodotto" Mode="ReadOnly" /></p>
-                          <p>
-                               Categoria: <%#: Item.nome_categoria != null ? Item.nome_categoria.nome_categoria : "" %>
+                          <p >
+                               <h6>Categoria: <%#: Item.nome_categoria != null ? Item.nome_categoria.nome_categoria : "" %></h6>
                           </p>
                           <p>
                             Prezzo: <asp:DynamicControl runat="server" DataField="prezzo_prodotto" ID="prezzo_prodotto" Mode="ReadOnly" />

@@ -214,6 +214,8 @@
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FormCommerciante.aspx" />
+    <Content Include="FormCommercianteResponse.aspx" />
     <Content Include="Images\CaravaggioLente.jpg" />
     <Content Include="Images\cittadini.jpg" />
     <Content Include="Images\commercianti.jpg" />
@@ -584,6 +586,20 @@
     </Compile>
     <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
       <DependentUpon>Url_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommerciante.aspx.cs">
+      <DependentUpon>FormCommerciante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormCommerciante.aspx.designer.cs">
+      <DependentUpon>FormCommerciante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommercianteResponse.aspx.cs">
+      <DependentUpon>FormCommercianteResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormCommercianteResponse.aspx.designer.cs">
+      <DependentUpon>FormCommercianteResponse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

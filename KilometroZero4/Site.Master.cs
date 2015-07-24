@@ -75,6 +75,12 @@ namespace KilometroZero4
                         = new System.Globalization.CultureInfo("it-IT");
             System.Threading.Thread.CurrentThread.CurrentUICulture
                  = new System.Globalization.CultureInfo("it-IT");
+            //pannello scelta città
+            if (Request.Cookies["k0city"] == null)
+            {
+               pnlSplash.Visible = false;
+            }
+            
             //preparo il datasource per nav secondario
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
@@ -108,6 +114,16 @@ namespace KilometroZero4
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut();
+        }
+
+        protected void coockieButton_Click(object sender, EventArgs e)
+        {
+            HttpCookie myCookie = new HttpCookie("k0city");
+            myCookie["Città"] = "Caravaggio";
+            myCookie["Data"] = DateTime.Now.ToString();
+            myCookie.Expires = DateTime.Now.AddDays(0);
+            Response.Cookies.Add(myCookie);
+            pnlSplash.Visible = false;
         }
     }
 

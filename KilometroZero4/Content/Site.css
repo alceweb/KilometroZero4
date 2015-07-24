@@ -60,3 +60,48 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+/*le mie classi*/
+.ContentSplash {
+    background-color:rgba(235, 235, 235, 0.72);
+    position:absolute;
+    font-size:1.2em;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:9999;
+}
+.Splash {
+    padding: 1px 10px 10px 10px;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    background-color: rgba(98, 138, 129, 0.80);
+    border-radius: 10px;
+    text-shadow: 0.5px 0.5px 0.5px #fff;
+    -webkit-text-shadow: 0.5px 0.5px 0.5px #fff;
+    -moz-text-shadow: 0.5px 0.5px 0.5px #fff;
+    -ms-text-shadow: 0.5px 0.5px 0.5px #fff;
+    box-shadow: 10px 10px 10px #716556;
+    -webkit-box-shadow: 10px 10px 10px #716556;
+    -moz-box-shadow: 10px 10px 10px #716556;
+    -ms-box-shadow: 10px 10px 10px #716556;
+}
+
+.SplashFooter {
+    position:relative;
+    text-align:center;
+}
+.SplashButton {
+    color: #fff;
+    border: thin solid #fff;
+    padding: 15px 0px 0px 0px;
+    height:70px;
+    width:70px;
+    border-radius: 35px;
+    background-color: rgba(98, 138, 129, 0.80);
+    font-size: 1.4em;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}

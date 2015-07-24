@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="KilometroZero4._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="jumbotron">
+   <div class="jumbotron">
         <div class="row">
             <div class="col-md-6">
             <h1><span class="red">K</span>ilometro <span class="red">Z</span>ero</h1>
@@ -18,8 +17,7 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Sei un commerciante?</h2>
-            <p>
-                Metti in vetrina gli articoli del tuo negozio.
+            <p><a href="FormCommerciante.aspx">Registrati</a> e metti in vetrina gli articoli del tuo negozio.
                 Dai evidenza alle tue promozioni o agli articoli speciali che caratterizzano la tua attività.
                 Puoì dare la passibilità a chi sta cercando una cosa particolare di trovarla nel tuo negozio
             <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">... &raquo;
@@ -30,7 +28,7 @@
                     <p>Se hai un'attività commerciale puoi sfruttare questo portale e creare una tua vetrina.<br />
                         Solo i commercianti regolari possono aprire una posizione su <span class="red">K</span>ilometro <span class="red">Z</span>ero.
                     </p>
-                    <p>Invia la form di richiesta di adesione.<br />
+                    <p>Invia la <a href="FormCommerciante.aspx"> form di richiesta di adesione</a>.<br />
                         La richiesta verrà accettata dal tuo comune, verrà creato un utente personalizzato e ti verranno inviati username e password, con i quali accedendo all'area riservata ai commercianti, potrai iniziare a esporre i tuoi prodotti o i tuoi servizi.<br />
 
                     </p>
@@ -48,9 +46,20 @@
             </p>
             <div class="collapse" id="collapseExample2">
                 <div class="well">
-                     Per accedere ai servizi di <span class="red">K</span>ilometro <span class="red">Z</span>ero è necessario registrarsi.<br />
-                    La registrazione è molto semplice, basta inserire in questa <a href="Account/Register.aspx" runat="server">form</a> la propria mail e la password e sarai subuto operativo.<br />
-            
+                     In più su <span class="red">K</span>ilometro <span class="red">Z</span>ero puoi mettere a disposizione degli altri le tue capacità.<br />
+                    <ul>
+                        <li>Ripetizioni per studenti</li>
+                        <li>Corsi professionali
+                            <ul>
+                                <li>Musica</li>
+                                <li>Personal trainer</li>
+                                <li>Modellismo</li>
+                            </ul>
+                        </li>
+                        <li>Riparazioni</li>
+                      </ul>
+                    L'unico limite è la tua fantasia...<br />
+                    Per farlo devi registrarti <a href="Account/Register.aspx">qui</a> e avrai accesso ad un nuovo modo di offrire il tuo sapere
                 </div>
             </div>
 

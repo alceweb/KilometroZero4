@@ -8,7 +8,8 @@
 
             </div>
             <div class="col-md-4">
-                Utilizzare pienamente le risorse della tua città!
+                Utilizzare pienamente le risorse della tua città!<br />
+                                <a class="btn btn-primary" href="Account/Register.aspx">Registrati </a>
             </div>
         </div>
     </div>
@@ -18,19 +19,28 @@
                 Un servizio per il cittadino
             </h2>
             <p>
-                                Un servizio erogato dal portale del comune, al pari di altri strumenti che già i cittadini utilizzano, semplice e potente allo stesso momento<br />
-                                Per poter raggiungere da casa le opportunità che la nostra città mette a disposizione        
+             Quante volte è capitato di cercare qualcosa e non sapere di averlo in casa?<br />
+                Cercare un prodotto particolare, un servizio specifico e non sapere di averlo a portata di mano.
             </p>
         </div>
         <div class="col-md-4">
             <h2>
                 Opportunità
             </h2>
-            <p>
-             Quante volte è capitato di cercare qualcosa e non sapere di averlo in casa?<br />
-                Cercare un prodotto particolare, un servizio specifico e non sapere di averlo a portata di mano.<br />
-                Il tuo comune con <span class="red">K</span>ilometro <span class="red">Z</span>ero ti dà l'opportunità di verificare se nella tua città lo puoi trovare.
-            </p>
+                                     In più su <span class="red">K</span>ilometro <span class="red">Z</span>ero puoi mettere a disposizione degli altri le tue capacità.<br />
+                    <ul>
+                        <li>Ripetizioni per studenti</li>
+                        <li>Corsi professionali
+                            <ul>
+                                <li>Musica</li>
+                                <li>Personal trainer</li>
+                                <li>Modellismo</li>
+                            </ul>
+                        </li>
+                        <li>Riparazioni</li>
+                      </ul>
+                    L'unico limite è la tua fantasia...<br />
+                    Per farlo devi registrarti <a href="Account/Register.aspx">qui</a> e avrai accesso ad un nuovo modo di offrire il tuo sapere
         </div>
         <div class="col-md-4">
             <h2>

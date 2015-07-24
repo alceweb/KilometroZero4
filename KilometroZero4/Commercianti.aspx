@@ -9,7 +9,9 @@
 
             </div>
             <div class="col-md-4">
-                Un valore aggiunto alla proposta commerciale sul territorio!
+                Un valore aggiunto alla proposta commerciale sul territorio!<br />
+                                <a class="btn btn-primary" href="FormCommerciante.aspx">Aderisci </a>
+
             </div>
         </div>
     </div>
@@ -19,11 +21,13 @@
                 Un servizio per il commercio
             </h2>
             <p>
-                                Un servizio erogato dal portale del comune, al pari di altri strumenti che già i cittadini utilizzano, semplice e potente allo stesso momento<br />
-                                Per proporre alla tua città i tuo prodotti e servizi, ecco il valore aggiunto alla tua attività.        
+                Se hai un'attività commerciale o sei un professionista, puoi sfruttare questo portale e creare una tua vetrina.<br />
+                Solo i possessori di partita IVA possono aprire una posizione su <span class="red">K</span>ilometro <span class="red">Z</span>ero.
             </p>
-            <p>
-                <a class="btn btn-default" href="#nogo">Aderisci &raquo;</a>
+                    <p>Invia la <a href="FormCommerciante.aspx"> form di richiesta di adesione</a>.<br />
+                        La richiesta verrà accettata dal tuo comune, verrà creato un utente personalizzato e ti verranno inviati username e password, con i quali accedendo all'area riservata ai commercianti, potrai iniziare a esporre i tuoi prodotti o i tuoi servizi.<br />
+
+                    </p>            <p>
             </p>
         </div>
         <div class="col-md-4">

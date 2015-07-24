@@ -43,19 +43,19 @@ namespace KilometroZero4.KZero
             }
         }
         
-// Model binding method to get List of Prodotti entries visualizza tutti dove attivo è selezionato
+// Bind al modello per generare la lista prodotti dove attivo è selezionato
 // USAGE: <asp:ListView SelectMethod="GetData">
         public IQueryable<KilometroZero4.Models.Prodotti> GetData()
         {
                 return _db.Prodottis.Where(p => p.attivo == true).Include(m => m.nome_categoria);
         }
-//Questo metodo visualizza tutti i prodotti attivi con il nome_prodottofiltrato dalla casella di testo
+        //Questo metodo visualizza tutti i prodotti attivi con il nome_prodottofiltrato dalla casella di testo
         public IQueryable<KilometroZero4.Models.Prodotti> GetData1()
         {
             var cerca = textCerca.Text.ToString();
             return _db.Prodottis.Where(p => p.nome_prodotto.Contains(cerca) && p.attivo == true).Include(m => m.nome_categoria);
         }
-        //Questo metodo visualizza tutti i prodotti attivi con il nome_prodottofiltrato dalla casella di testo filttrati da ddbox categoria
+        //Questo metodo visualizza tutti i prodotti attivi con il nome_prodottofiltrato dalla casella di testo e la categoria da ddbox categoria
         public IQueryable<KilometroZero4.Models.Prodotti> GetData2()
         {
             var nome = textCerca.Text.ToString();
@@ -65,16 +65,14 @@ namespace KilometroZero4.KZero
 
         protected void linkbuttonCerca_Click(object sender, EventArgs e)
         {
+            ddownCat.Visible = true;
             ListView1.SelectMethod = "GetData1";
         }
 
-        protected void linkbuttonTutti_Click(object sender, EventArgs e)
-        {
-            ListView1.SelectMethod = "GetData";
-        }
 
         protected void linkbuttonReset_Click(object sender, EventArgs e)
         {
+            ddownCat.Visible = false;
             textCerca.Text = "";
             ListView1.SelectMethod = "GetData1";
         }

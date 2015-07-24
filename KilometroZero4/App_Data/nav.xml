@@ -17,7 +17,7 @@
   <ruolo ruolo="utente">
     <vocenav>
       <voce testo="profilo utente" pagina="default.aspx"/>
-      <voce testo="lista prodotti" pagina="default.aspx"/>
+      <voce testo="lista prodotti" pagina="/KZero/Main"/>
     </vocenav>
   </ruolo>
 </nav>

@@ -47,6 +47,14 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <asp:Panel ID="pnlSplash" runat="server">
+            <div class="ContentSplash">
+                <div class="Splash">
+                    qui<asp:Button ID="coockieButton" OnClick="coockieButton_Click" runat="server" Text="Button" />
+                </div>
+            </div>
+        </asp:Panel>
+
 <%---nav pubblica ---%>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -89,32 +97,32 @@
 <%---Fine nav pubblica ---%>
 <%---nav riservata ai ruoli ---%>
         <asp:XmlDataSource ID="xdsNav" runat="server" DataFile="~/App_Data/nav.xml"></asp:XmlDataSource>
-<asp:Panel ID="pnlNav" runat="server">
-                <div class="navbar navbar-inverse ">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                    <a class="navbar-brand" runat="server" href="#">
-                        <asp:Label ID="Label1" CssClass="red1" runat="server" ></asp:Label>
-                    </a>
+        <asp:Panel ID="pnlNav" runat="server">
+                        <div class="navbar navbar-inverse ">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                            <a class="navbar-brand" runat="server" href="#">
+                                <asp:Label ID="Label1" CssClass="red1" runat="server" ></asp:Label>
+                            </a>
+                                </div>
+                                <div class="navbar-collapse collapse">
+                                    <ul runat="server" class="nav navbar-nav">
+                                        <asp:ListView ID="ListView2" runat="server" DataSourceID="xdsNav">
+                                            <ItemTemplate>
+                                                <li><a href='<%# Eval("pagina") %>'><%# Eval("testo") %></a></li>
+                                            </ItemTemplate>
+                                        </asp:ListView>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="navbar-collapse collapse">
-                            <ul runat="server" class="nav navbar-nav">
-                                <asp:ListView ID="ListView2" runat="server" DataSourceID="xdsNav">
-                                    <ItemTemplate>
-                                        <li><a href='<%# Eval("pagina") %>'><%# Eval("testo") %></a></li>
-                                    </ItemTemplate>
-                                </asp:ListView>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-</asp:Panel>
+        </asp:Panel>
 <%---Fine nav riservata ai ruoli  ---%>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -124,8 +132,6 @@
                 <p>&copy; <%: DateTime.Now.Year %> - <span class="almishCesare"><a href="http://www.cr-consult.eu/zona-web">Almish<b>&</b>Cesàre<b>W</b>eb</a></span></p>
             </footer>
         </div>
-
-
     </form>
 </body>
 </html>
