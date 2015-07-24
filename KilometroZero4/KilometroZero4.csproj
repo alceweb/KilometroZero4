@@ -230,6 +230,12 @@
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\Lontano.jpg" />
     <Content Include="Images\Ruoli.jpg" />
+    <Content Include="K0Admin\Comunis\Default.aspx" />
+    <Content Include="K0Admin\Comunis\Delete.aspx" />
+    <Content Include="K0Admin\Comunis\Details.aspx" />
+    <Content Include="K0Admin\Comunis\Edit.aspx" />
+    <Content Include="K0Admin\Comunis\Insert.aspx" />
+    <Content Include="K0Admin\Main.aspx" />
     <Content Include="KZeroCommercianti\Prodottis\Default.aspx" />
     <Content Include="KZeroCommercianti\Prodottis\Delete.aspx" />
     <Content Include="KZeroCommercianti\Prodottis\Details.aspx" />
@@ -258,6 +264,7 @@
     <Content Include="KZero\Web.config" />
     <Content Include="KZeroComuni\Web.config" />
     <Content Include="KZeroNav\Web.config" />
+    <Content Include="K0Admin\Web.config" />
     <None Include="Properties\PublishProfiles\KilometroZero4.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ai.0.15.0-build32981.js" />
@@ -604,6 +611,48 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="K0Admin\Comunis\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="K0Admin\Comunis\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="K0Admin\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="K0Admin\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KZeroCommercianti\Prodottis\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -750,8 +799,13 @@
     <Compile Include="Migrations\201507180740186_nav.Designer.cs">
       <DependentUpon>201507180740186_nav.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507241553076_comuni.cs" />
+    <Compile Include="Migrations\201507241553076_comuni.Designer.cs">
+      <DependentUpon>201507241553076_comuni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorie.cs" />
+    <Compile Include="Models\Comuni.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Nav.cs" />
     <Compile Include="Models\Prodotti.cs" />
@@ -796,6 +850,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507180740186_nav.resx">
       <DependentUpon>201507180740186_nav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507241553076_comuni.resx">
+      <DependentUpon>201507241553076_comuni.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
