@@ -32,7 +32,7 @@ namespace KilometroZero4
         // Model binding method per generare la lista di dropdownbox selezione categorie
         public IQueryable<KilometroZero4.Models.Categorie> GetDataC()
         {
-            return _db.Categories;
+            return _db.Categories.OrderBy(c=>c.nome_categoria);
         }
 
         // Model binding method to get List of Prodotti filtro categoria
@@ -40,7 +40,7 @@ namespace KilometroZero4
         public IQueryable<KilometroZero4.Models.Prodotti> GetDataCa()
         {
             var cerca = textCerca.Text.ToString();
-            string cat = ddownCat.SelectedValue.ToString();
+            string cat = lvCat.SelectedValue.ToString();
             return _db.Prodottis.Where(p => p.nome_prodotto.Contains(cerca) && p.attivo == true).Include(m => m.nome_categoria).Where(c => c.nome_categoria.nome_categoria == cat);
         }
        
@@ -48,6 +48,7 @@ namespace KilometroZero4
         {
             ddownCat.Visible = true;
             pnlProdotti.Visible = true;
+            pnlCat.Visible = true;
             ListView1.SelectMethod = "GetData1";
         }
 
@@ -56,7 +57,9 @@ namespace KilometroZero4
         {
             ddownCat.Visible = false;
             pnlProdotti.Visible = false;
+            pnlCat.Visible = false;
             textCerca.Text = "";
+            lblCategoria.Text = "";
             ListView1.SelectMethod = "GetData1";
         }
 
@@ -64,5 +67,12 @@ namespace KilometroZero4
         {
             ListView1.SelectMethod = "GetDataCa";
         }
+
+        protected void lvCat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView1.SelectMethod = "GetDataCa";
+            lblCategoria.Text = lvCat.SelectedValue.ToString();
+        }
+
     }
 }

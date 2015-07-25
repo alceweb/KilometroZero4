@@ -6,22 +6,49 @@
         <div class="row">
             <div class="col-md-6">
             <h1><span class="red">K</span>ilometro <span class="red">Z</span>ero</h1>
-            <p class="lead">Che coas stai cercando?</p>
+            <p class="lead">Che cosa stai cercando?</p>
                 <!--- ricerca generica nome_prodotto--->
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 input-group">
+
                             <div class="input-group">
-                                <span class="input-group-btn">
-                                    <asp:LinkButton ID="linkbuttonCerca" OnClick="linkbuttonCerca_Click" runat="server" CausesValidation="False"><span class="glyphicon glyphicon-search"></span>  </asp:LinkButton>
-                                <asp:TextBox ID="textCerca" CssClass="form-control" runat="server" placeholder="Cosa cerchi..." ></asp:TextBox>
-                                </span>
+                                <div class="input-group-btn">
+                                    <div class="btn-group">
+                                <asp:TextBox ID="textCerca" CssClass="form-control" runat="server" placeholder="Cosa cerchi..." aria-describedby="basic-addon1"></asp:TextBox>
+                                <asp:LinkButton ID="linkbuttonCerca" OnClick="linkbuttonCerca_Click" runat="server" CausesValidation="False"><span class="glyphicon glyphicon-search"></span>  </asp:LinkButton>
+                                <asp:LinkButton ID="linkbuttonReset" OnClick="linkbuttonReset_Click" runat="server"><span class="glyphicon glyphicon-remove"></span></asp:LinkButton>
+                                        <asp:Panel ID="pnlCat" Visible="false" runat="server">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Categoria <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <asp:DropDownList AutoPostBack="true" runat="server" Visible="false" SelectMethod="GetDataC" OnSelectedIndexChanged="ddownCat_SelectedIndexChanged" CausesValidation="false" ID="ddownCat" DataTextField="nome_categoria" DataValueField="nome_categoria" >                            </asp:DropDownList>
+                                            <asp:ListView ID="lvCat" SelectMethod="GetDataC" OnSelectedIndexChanged="lvCat_SelectedIndexChanged" DataKeyNames="nome_categoria" runat="server">
+                                                <ItemTemplate>
+                                                    <li>
+                                                        <a href="#" runat="server"><asp:LinkButton ID="LinkButton1" CommandName="Select" runat="server"><%# Eval("nome_categoria") %></asp:LinkButton></a>
+
+                                                    </li>
+                                                </ItemTemplate>
+                                                <SelectedItemTemplate>
+                                                    <li>
+                                                        <a href="#" runat="server"><asp:LinkButton ID="LinkButton1" runat="server"><%# Eval("nome_categoria") %></asp:LinkButton></a>
+
+                                                    </li>
+                                                </SelectedItemTemplate>
+                                            </asp:ListView>
+                                        </ul>
+                                            <asp:Label ID="lblCategoria" runat="server" ></asp:Label>
+
+                                        </asp:Panel>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- /input-group -->
                         </div>
+                            <!-- /input-group -->
                         <!-- /.col-lg-6 -->
                         <div class="col-lg-6">
                             <span class="input-group-btn">
-                                <asp:LinkButton ID="linkbuttonReset" OnClick="linkbuttonReset_Click" runat="server"><span class="glyphicon glyphicon-remove"></span></asp:LinkButton>
                             </span>
                         </div>
 
@@ -31,8 +58,6 @@
                 <!--- filtra per categoria--->
                     <div class="row">
                         <div class="col-lg-6">
-                            <asp:DropDownList CssClass="dropdownCat" AutoPostBack="true" runat="server" Visible="false" SelectMethod="GetDatac" OnSelectedIndexChanged="ddownCat_SelectedIndexChanged" CausesValidation="false" ID="ddownCat" DataTextField="nome_categoria" DataValueField="nome_categoria" >
-                            </asp:DropDownList>
                         </div>
                     </div>
                 <!--- fine filtra per categoria--->
@@ -111,75 +136,53 @@
             </asp:ListView>
         </div>
     </asp:Panel>
-
-
+<%--- Pannello lista prodotti fine ---%>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 text-center">
+            <h1 class="glyphicon glyphicon-euro"></h1>
             <h2>Sei un commerciante?</h2>
-            <p><a href="FormCommerciante.aspx">Registrati</a> e metti in vetrina gli articoli del tuo negozio.
-                Dai evidenza alle tue promozioni o agli articoli speciali che caratterizzano la tua attività.
-                Puoì dare la passibilità a chi sta cercando una cosa particolare di trovarla nel tuo negozio
-            <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">... &raquo;
-            </a>
-            </p>
-            <div class="collapse" id="collapseExample1">
-                <div class="well">
-                    <p>Se hai un'attività commerciale puoi sfruttare questo portale e creare una tua vetrina.<br />
-                        Solo i commercianti regolari possono aprire una posizione su <span class="red">K</span>ilometro <span class="red">Z</span>ero.
-                    </p>
-                    <p>Invia la <a href="FormCommerciante.aspx"> form di richiesta di adesione</a>.<br />
-                        La richiesta verrà accettata dal tuo comune, verrà creato un utente personalizzato e ti verranno inviati username e password, con i quali accedendo all'area riservata ai commercianti, potrai iniziare a esporre i tuoi prodotti o i tuoi servizi.<br />
+            <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary">
+                Cogli l'occasione
+            </button>
+            <script>
+                $('#myButton').on('click', function () {
+                    var $btn = $(this).button('loading')
+                    // business logic...
+                    open(['commercianti'])
+                    $btn.button('reset')
+                })
+            </script>
 
-                    </p>
-             
-                </div>
-            </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 text-center">
+            <h1 class="glyphicon glyphicon-user"></h1>
             <h2>Sei un cittadino?</h2>
-            <p>
-                Se stai cercando qualcosa e non sai dove trovarlo, oppure hai bisogno di un servizio, cerca in Kilometro Zero.
-                Hai la possibilità di ricercare in tutti i negozi del tuo comune.
-            <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">... &raquo;
-            </a>
-            </p>
-            <div class="collapse" id="collapseExample2">
-                <div class="well">
-                     In più su <span class="red">K</span>ilometro <span class="red">Z</span>ero puoi mettere a disposizione degli altri le tue capacità.<br />
-                    <ul>
-                        <li>Ripetizioni per studenti</li>
-                        <li>Corsi professionali
-                            <ul>
-                                <li>Musica</li>
-                                <li>Personal trainer</li>
-                                <li>Modellismo</li>
-                            </ul>
-                        </li>
-                        <li>Riparazioni</li>
-                      </ul>
-                    L'unico limite è la tua fantasia...<br />
-                    Per farlo devi registrarti <a href="Account/Register.aspx">qui</a> e avrai accesso ad un nuovo modo di offrire il tuo sapere
-                </div>
-            </div>
-
+            <button type="button" id="btnCittadino" data-loading-text="Loading..." class="btn btn-primary">
+                vivi la città
+            </button>
+            <script>
+                $('#btnCittadino').on('click', function () {
+                    var $btn = $(this).button('loading')
+                    // business logic...
+                    open(['Cittadini'])
+                    $btn.button('reset')
+                })
+            </script>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 text-center">
+            <h1 class="glyphicon glyphicon-home"></h1>
             <h2>Comune</h2>
-            <p>
-                Un servizio innovativo ed esclusivo offerto ai comercianti e ai cittadini per dare più valore al commercio a chilometro zero sul territorio
-            <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">... &raquo;
-            </a>
-            </p>
-            <div class="collapse" id="collapseExample3">
-                <div class="well">
-                    Gli amministratori comunali possono richiedere l'adesione a <span class="red">K</span>ilometro <span class="red">Z</span>ero semplicemente compilando questa <a href="#"> form</a>.<br />
-                    Verrete contattati e un incaricato vi proporrà una demo personalizzata. 
-             
-                </div>
-            </div>
-
-
+            <button type="button" id="btnComune" data-loading-text="Loading..." class="btn btn-primary">
+                Offri opportunità
+            </button>
+            <script>
+                $('#btnComune').on('click', function () {
+                    var $btn = $(this).button('loading')
+                    // business logic...
+                    open(['Comuni'])
+                    $btn.button('reset')
+                })
+            </script>
         </div>
     </div>
-
 </asp:Content>

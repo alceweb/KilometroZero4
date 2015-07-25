@@ -13,15 +13,6 @@ namespace KilometroZero4 {
     public partial class _Default {
         
         /// <summary>
-        /// linkbuttonCerca control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton linkbuttonCerca;
-        
-        /// <summary>
         /// textCerca control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace KilometroZero4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textCerca;
+        
+        /// <summary>
+        /// linkbuttonCerca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton linkbuttonCerca;
         
         /// <summary>
         /// linkbuttonReset control.
@@ -40,6 +40,15 @@ namespace KilometroZero4 {
         protected global::System.Web.UI.WebControls.LinkButton linkbuttonReset;
         
         /// <summary>
+        /// pnlCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCat;
+        
+        /// <summary>
         /// ddownCat control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,24 @@ namespace KilometroZero4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddownCat;
+        
+        /// <summary>
+        /// lvCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvCat;
+        
+        /// <summary>
+        /// lblCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
         
         /// <summary>
         /// pnlProdotti control.
