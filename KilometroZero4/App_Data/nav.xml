@@ -3,7 +3,7 @@
   <ruolo ruolo="commerciante">
     <vocenav>
       <voce testo="profilo attività" pagina="default.aspx"/>
-      <voce testo="i tuoi prodotti" pagina="default.aspx"/>
+      <voce testo="i tuoi prodotti" pagina="/KZeroCommercianti/Prodottis/Default"/>
     </vocenav>
   </ruolo>
   <ruolo ruolo="comune">

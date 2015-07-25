@@ -4,67 +4,42 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.Entity;
 using KilometroZero4.Models;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System.Web.Routing;
-using System.Web.ModelBinding;
-using System.Web.Security;
-
 namespace KilometroZero4
 {
     public partial class Test : System.Web.UI.Page
     {
+		protected KilometroZero4.Models.ApplicationDbContext _db = new KilometroZero4.Models.ApplicationDbContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Labelruolo.Text =  HttpContext.Current.User.Identity.IsAuthenticated.ToString();
-            string[] ruoli = Roles.GetAllRoles();
-            Response.Write("ciao");
+            
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        // Model binding method per generare la lista di dropdownbox selezione categorie
+        // USAGE: <asp:ListView SelectMethod="GetData">
+        public IQueryable<KilometroZero4.Models.Categorie> GetDataC()
         {
-            // Access the application context and create result variables.
-            Models.ApplicationDbContext context = new ApplicationDbContext();
-            IdentityResult IdUserResult;
-
-            // Create a UserManager object based on the UserStore object and the ApplicationDbContext  
-            // object. Note that you can create new objects and use them as parameters in
-            // a single line of code, rather than using multiple lines of code, as you did
-            // for the RoleManager object.
-            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-
-            // If the new "commerciante3" user was successfully created, 
-            // add the "commerciante3" user to the "commerciante3" role. 
-            IdUserResult = userMgr.AddToRole("3d07397c-2dc4-401e-9110-5a84f8923acd", "commerciante3");
+            return _db.Categories;
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
+        
+        // Model binding method to get List of Prodotti entries
+        // USAGE: <asp:ListView SelectMethod="GetData">
+        public IQueryable<KilometroZero4.Models.Prodotti> GetData()
         {
-            Label2.Text = "ciao";
+            return _db.Prodottis.Include(m => m.nome_categoria);
         }
-
-        protected void Button3_Click(object sender, EventArgs e)
+        // Model binding method to get List of Prodotti filtro categoria
+        // USAGE: <asp:ListView SelectMethod="GetData">
+        public IQueryable<KilometroZero4.Models.Prodotti> GetDataCa()
         {
-            var utente = HttpContext.Current.User.Identity.GetUserId();
-            Label2.Text = "Id utente = " + utente;
-            Models.ApplicationDbContext context = new ApplicationDbContext();
-            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            userMgr.AddToRole(utente, "comune");
+            string cat = DropDownList1.SelectedValue.ToString();
+            return _db.Prodottis.Include(m => m.nome_categoria).Where(c => c.nome_categoria.nome_categoria == cat);
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var ruolo = HttpContext.Current.User.IsInRole("commerciante").ToString();
-            Label2.Text = "Ruolo utente = " + ruolo;
+            ListView1.SelectMethod = "GetDataCa";
         }
-
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
-            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            userMgr.AddToRole("e9f8777f-7017-426e-b1ac-1bec4636c62f", "comune");
-        }
-
     }
 }

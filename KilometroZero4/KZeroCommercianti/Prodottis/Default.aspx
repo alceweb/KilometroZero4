@@ -36,7 +36,7 @@
 								<asp:LinkButton Text="prezzo_prodotto" CommandName="Sort" CommandArgument="prezzo_prodotto" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="categoria_Id" CommandName="Sort" CommandArgument="categoria_Id" runat="Server" />
+								<asp:LinkButton Text="categoria_Id" CommandName="Sort" CommandArgument="categoria_id" runat="Server" />
 							</th>
                             <th>
 								<asp:LinkButton Text="dataInizio" CommandName="Sort" CommandArgument="dataInizio" runat="Server" />
@@ -80,6 +80,8 @@
 								<asp:DynamicControl runat="server" DataField="prezzo_prodotto" ID="prezzo_prodotto" Mode="ReadOnly" />
 							</td>
 							<td>
+									<%#: Item.nome_categoria != null ? Item.nome_categoria.nome_categoria : "" %>
+								<asp:DynamicControl runat="server" DataField="categoria_id" ID="nome_categoria" Mode="ReadOnly" />
 							</td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="dataInizio" ID="dataInizio" Mode="ReadOnly" />

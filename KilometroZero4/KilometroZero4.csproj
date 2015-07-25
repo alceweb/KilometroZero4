@@ -303,6 +303,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="Test.aspx" />
+    <Content Include="test1.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -803,6 +804,10 @@
     <Compile Include="Migrations\201507241553076_comuni.Designer.cs">
       <DependentUpon>201507241553076_comuni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507241646583_comuni1.cs" />
+    <Compile Include="Migrations\201507241646583_comuni1.Designer.cs">
+      <DependentUpon>201507241646583_comuni1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Comuni.cs" />
@@ -832,6 +837,13 @@
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="test1.aspx.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test1.aspx.designer.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -853,6 +865,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507241553076_comuni.resx">
       <DependentUpon>201507241553076_comuni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507241646583_comuni1.resx">
+      <DependentUpon>201507241646583_comuni1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
